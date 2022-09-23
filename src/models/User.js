@@ -7,7 +7,7 @@ const userModel = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      displayName: DataTypes.STRING,
+      display_name: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.STRING(64),
       image: DataTypes.STRING,
@@ -17,9 +17,10 @@ const userModel = (sequelize, DataTypes) => {
       tableName: 'Users',
     }
   );
-  User.associate = (models) => {
-    User.hasMany(models.BlogPost, { foreignKey: 'userId' });
-  };
+  // User.associate = (models) => {
+  //   User.hasMany(models.BlogPost, {
+  //   User.hasMany(models.BlogPost, { foreignKey: 'userId' });
+  // };
 
   return User;
 };

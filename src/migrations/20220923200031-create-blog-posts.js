@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable(
-      'BlogPosts',
+      'blog_posts',
       {
         id: {
           allowNull: false,
@@ -26,7 +26,7 @@ module.exports = {
           onDelete: 'CASCADE',
           field: 'user_id',
           references: {
-            model: 'Users',
+            model: 'users',
             key: 'id',
           },
         },
@@ -47,6 +47,6 @@ module.exports = {
   },
 
   down: async (queryInterface, _Sequelize) => {
-    return queryInterface.dropTable('BlogPosts');
+    await queryInterface.dropTable('BlogPosts');
   },
 };
