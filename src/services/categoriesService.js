@@ -6,7 +6,7 @@ const createCategoryService = async (name) => {
 };
 
 const getCategories = async () => {
-  const categories = await Category.findAll();
+  const categories = await Category.findAll({ order: [['id', 'ASC']] });
   return categories;
 };
 
