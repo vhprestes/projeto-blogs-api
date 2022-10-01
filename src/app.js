@@ -2,7 +2,7 @@ const express = require('express');
 
 // const { loginRouter } = require('./routers');
 // const { userRouter } = require('./routers');
-// const loginController = require('./controllers/loginController');
+const loginController = require('./controllers/loginController');
 const userController = require('./controllers/userController');
 const validateToken = require('./middlewares/validateToken');
 const categoriesController = require('./controllers/categoriesController');
@@ -22,7 +22,7 @@ require('dotenv/config');
 
 // ...
 
-// app.post('/login', loginController.login);
+app.post('/login', loginController.login);
 app.get('/user', validateToken, userController.getUsers);
 app.post('/user', userController.newUserController);
 app.get('/user/:id', validateToken, userController.getUserById);
