@@ -40,7 +40,7 @@ app.post(
   postController.createPost,
 );
 
-// app.get('/post', validateToken, postController.getAllPosts);
+app.get('/post', validateToken, postController.getAllPosts);
 // app.use('/login', loginRouter);
 // app.use('/users', userRouter);
 
