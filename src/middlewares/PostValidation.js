@@ -12,7 +12,7 @@ const validatePostCategories = async (req, res, next) => {
   const { categoryIds } = req.body;
   const categories = await categoriesService.getCategoryByIdService(categoryIds);
  if (categoryIds.length !== categories.length) {
-  res.status(400).json({ message: '"categoryIds" not found' });
+  return res.status(400).json({ message: '"categoryIds" not found' });
  }
   next();
 };

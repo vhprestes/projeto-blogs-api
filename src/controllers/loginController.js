@@ -30,9 +30,9 @@ const login = async (req, res) => {
       email,
     };
     const token = jwt.sign(payload, passw, jwtSettings);
-    res.status(200).json({ token });
+    return res.status(200).json({ token });
   } catch (err) {
-  res.status(400).json({ message: err.message });
+    return res.status(400).json({ message: err.message });
 } 
 };
 
