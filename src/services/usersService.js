@@ -14,7 +14,7 @@ const createUser = async (displayName, email, password, image) => {
   const validateMail = await userValidation.validateEmail(email);
   if (validatePassName) return validatePassName;
   if (validateMail) return validateMail;
-  await User.create({ displayName, email, password, image });
+    await User.create({ displayName, email, password, image });
 const user = await User.findOne({ where: { email } });
 const token = jwt.sign({ user }, passw, jwtConfig);
 return { token };
