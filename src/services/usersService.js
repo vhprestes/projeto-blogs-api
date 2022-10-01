@@ -21,12 +21,12 @@ return { token };
 };
 
 const getAllUsers = async () => {
-  const users = await User.findAll({ attributes: { exclude: ['password'] } });
+  const users = await User.findAll(({ attributes: { exclude: ['password'] } }));
   return users;
 };
 
 const getUserById = async (id) => {
-  const user = await User.findByPk(id, { attributes: { exclude: ['password'] } });
+  const user = await User.findByPk(id, ({ attributes: { exclude: ['password'] } }));
   return user;
 };
 

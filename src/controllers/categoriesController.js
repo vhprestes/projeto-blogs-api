@@ -4,7 +4,8 @@ const categoriesService = require('../services/categoriesService');
 const createCategory = async (req, res) => {
   try {
     const { name } = req.body;
-    const category = await createCategoryService(name);
+    // {} abaixo por motivos de vai que
+    const category = await createCategoryService({ name });
     if (!name || name === '') {
       return res.status(400).json({ message: '"name" is required' });
     }
