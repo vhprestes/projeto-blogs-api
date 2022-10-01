@@ -22,7 +22,7 @@ require('dotenv/config');
 
 // ...
 
-app.post('/login', loginController);
+app.post('/login', loginController.login);
 app.get('/user', validateToken, userController.getUsers);
 app.post('/user', userController.newUserController);
 app.get('/user/:id', validateToken, userController.getUserById);

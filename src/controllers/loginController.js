@@ -16,7 +16,7 @@ const isBodyValid = (email, password) => {
   return true;
 };
 
-module.exports = async (req, res) => {
+const login = async (req, res) => {
     try {
     const { email, password } = req.body;
     if (!isBodyValid) {
@@ -34,4 +34,8 @@ module.exports = async (req, res) => {
   } catch (err) {
   res.status(400).json({ message: err.message });
 } 
+};
+
+module.exports = {
+  login,
 };

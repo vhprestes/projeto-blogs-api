@@ -25,7 +25,7 @@ const createPost = async (req, res) => {
       return res.status(409).json({ message: 'error ao cadastrar usuário' });
     }
     await createPostAndCategory(categoryIds, createdPost);
-    res.status(201).json(createdPost);
+    return res.status(201).json(createdPost);
   } catch (err) {
     return res
       .status(500)
